@@ -1,0 +1,270 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    background: lightskyblue;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 1;
+    
+}
+
+.container-before{
+    background-color: transparent;
+    width: 470px;
+    height: 470px;
+    position: fixed;
+    
+}
+
+.box{
+    position: relative;
+    z-index: 1;
+    width: 200px;
+    aspect-ratio: 1;
+    transform-style: preserve-3d;
+    transition: 1s;
+    transform: perspective(1000px) rotateY(0deg);
+    background: transparent; 
+    
+   
+}
+#video-frame{
+    display:none;
+    position: absolute;
+    left: -15%;
+    top: 20%;
+    width: min-content;
+    height: min-content;
+    
+}
+
+#video-frame video{
+    object-fit: cover;
+}
+
+.backBtnFromMainPage{
+    display: none;
+    position: fixed;
+    padding: .5rem;
+    bottom: -50px;
+    right: 0px;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+.backBtnFromMainPage:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.box span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(550px);
+    -webkit-box-reflect:above 40px linear-gradient(#0003,transparent );
+}
+
+
+.box span img{
+    position: absolute;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    transition: .3s;
+}
+.box span img:hover{
+    cursor: pointer;
+
+}
+
+
+
+
+.box span p{
+    position: absolute;
+    top: -16%;
+    left: 50%;
+   transform: translateX(-50%);
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    transition: .3s;
+   
+}
+
+
+.btns{
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    gap: 100px;
+}
+.btns .btn {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btns .btn:hover{
+    cursor: pointer;
+}
+.btns .btn:active{
+    background: white;
+    
+}
+.btns .btn::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+    transform: rotate(45deg) translate(-2.5px,2.5px);
+}
+
+.btns .btn.prev::before{
+   transform: rotate(225deg) translate(-2.5px,2.5px);
+}
+.btns .btn:active::before{
+    border-top: 3px solid #000000;
+    border-right: 3px solid #010101;
+}
+.btns .btn .left_3d {
+   position: absolute;
+   left: -700%;
+   font-size: 1.5rem;
+   color: white;
+}
+.btns .btn .right_regular {
+   position: absolute;
+   right: -700%;
+   font-size: 1.5rem;
+   color: white;
+}
+/*  css animacije blica*/
+#main1 {
+    display: none;
+    
+   
+    
+}
+.animation-frame{
+    background-image: url('./projectImage1.png');
+    background-position: center ;
+    position: relative;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100vw; /* Add this line */
+    height: 100vh; /* Add this line */
+    animation: pomeranjeSlike 4s alternate infinite;
+}
+
+@keyframes pomeranjeSlike {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+#aboutDebugText{
+    display: none;
+    width: 80%;
+    margin: auto 10%;
+    font-size: 2rem;
+    
+}
+
+ 
+ #blic{
+    background-image: url(./assets/imgInImg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+   width: 0px;
+   aspect-ratio: 1;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   border-radius: 50%;
+   background-color: white;
+   translate: (-50 -50);
+   overflow: hidden;
+}
+
+
+
+#myAudio{
+   display: none;
+}
+ 
+
+/*   O meni */
+
+#aboutMe{
+    display: none;
+    width: 100vw;
+    min-height: 100vh;
+    background:lightskyblue;
+    color: blue;
+    
+}
+#output{
+    display: none;
+    position: absolute;
+    top: 12rem;
+    left:31rem;
+    font-size: 3rem;
+    color: rgb(81, 148, 171);
+    animation: textFade 1s ease-in-out alternate-reverse infinite;
+}
+
+@keyframes textFade {
+    0%{top:13.5rem;}
+    100%{top:12rem}
+    
+}
+
+#nextBtn{
+    display: block;
+    position: absolute;
+    top: 17rem;
+    left:40rem;
+    font-size: 1.5rem;
+    padding: 0.4rem 1rem;
+    color: antiquewhite;
+    border: 1px solid antiquewhite;
+    background-color: rgb(81, 148, 171);
+    border-radius: 10px;
+}
+#nextBtn:hover{
+    font-weight: bold;
+    cursor: pointer;
+}

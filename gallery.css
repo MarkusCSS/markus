@@ -1,0 +1,295 @@
+.gallery{
+    background:linear-gradient(lightblue,lightgreen);
+    width: 100vw;
+    height: 100vh;
+   overflow: hidden;
+   overflow-y: auto;
+    padding: 10px;
+    position: relative;
+}
+.gallery button{
+    cursor: pointer;
+}
+#gallery1,
+#gallery2,
+#gallery3,
+#gallery4,
+#gallery5-5,
+#gallery6{
+    display: none;
+}
+#gallery1 button,
+#gallery2 button,
+#gallery3 button,
+#gallery4 button,
+#gallery5-5 button,
+#gallery6 button
+{
+    position: fixed;
+    top: 7%;
+    width: 10%;
+    border-radius: 10px;
+    padding: 5px 4px;
+    right: 5%;
+}
+#gallery1 button:hover,
+#gallery2 button:hover,
+#gallery3 button:hover,
+#gallery4 button:hover,
+#gallery5-5 button:hover,
+#gallery6 button:hover
+{
+    font-weight: bold;
+    color: white;
+    background: black;
+}
+#gallery1 button:first-child,
+#gallery2 button:first-child,
+#gallery3 button:first-child,
+#gallery4 button:first-child,
+#gallery5-5 button:first-child,
+#gallery6 button:first-child
+{
+    left: 5%;
+}
+#gallery1 button:first-child:hover,
+#gallery2 button:first-child:hover,
+#gallery3 button:first-child:hover,
+#gallery4 button:first-child:hover,
+#gallery5-5 button:first-child:hover,
+#gallery6 button:first-child:hover
+{
+    font-weight: bold;
+    color: white;
+    background: black;
+    left: 5%;
+}
+
+#gallery1 h1,
+#gallery2 h1,
+#gallery3 h1,
+#gallery4 h1,
+#gallery5-5 h1,
+#gallery6 h1
+{
+    
+    text-align: center;
+    font-size: 3rem;
+    margin: 1.5rem 0;
+}
+#gallery1 img,
+#gallery2 img,
+#gallery3 img,
+#gallery4 img,
+#gallery5-5 img,
+#gallery6 img
+{
+    max-width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    filter: saturate(1);
+    transition: .2;
+}
+#gallery1 img:hover,
+#gallery2 img:hover,
+#gallery3 img:hover,
+#gallery4 img:hover,
+#gallery5-5 img:hover,
+#gallery6 img:hover
+{
+    filter: saturate(1);
+    transition: .2;
+}
+#gallery1 .grid-wrapper>div,
+#gallery2 .grid-wrapper>div,
+#gallery3 .grid-wrapper>div,
+#gallery4 .grid-wrapper>div,
+#gallery5-5 .grid-wrapper>div,
+#gallery6 .grid-wrapper>div
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#gallery1 .grid-wrapper > div > img,
+#gallery2 .grid-wrapper > div > img,
+#gallery3 .grid-wrapper > div > img,
+#gallery4 .grid-wrapper > div > img,
+#gallery5-5 .grid-wrapper > div > img,
+#gallery6 .grid-wrapper > div > img
+{
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 10px;
+transition: .2;
+
+}
+#gallery1 .grid-wrapper > div > img:hover,
+#gallery2 .grid-wrapper > div > img:hover,
+#gallery3 .grid-wrapper > div > img:hover,
+#gallery4 .grid-wrapper > div > img:hover,
+#gallery5-5 .grid-wrapper > div > img:hover,
+#gallery6 .grid-wrapper > div > img:hover
+ {
+    transform:scale(1.05);
+    z-index: 1;
+    transition: .2;
+    cursor: pointer;
+}
+
+#gallery1 .grid-wrapper,
+#gallery2 .grid-wrapper,
+#gallery3 .grid-wrapper,
+#gallery4 .grid-wrapper,
+#gallery5-5 .grid-wrapper,
+#gallery6 .grid-wrapper
+{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-auto-rows: 200px;
+    grid-auto-flow: dense;
+}
+#gallery1 .grid-wrapper .wide,
+#gallery2 .grid-wrapper .wide,
+#gallery3 .grid-wrapper .wide,
+#gallery4 .grid-wrapper .wide,
+#gallery5-5 .grid-wrapper .wide,
+#gallery6 .grid-wrapper .wide
+{
+    grid-column: span 2;
+}
+#gallery1 .grid-wrapper .wide:hover img,
+#gallery2 .grid-wrapper .wide:hover img,
+#gallery3 .grid-wrapper .wide:hover img,
+#gallery4 .grid-wrapper .wide:hover img,
+#gallery5-5 .grid-wrapper .wide:hover img,
+#gallery6 .grid-wrapper .wide:hover img
+{
+    transform: scaleX(1);
+    transform: scaleY(1.05);
+}
+#gallery1 .grid-wrapper .tall,
+#gallery2 .grid-wrapper .tall,
+#gallery3 .grid-wrapper .tall,
+#gallery4 .grid-wrapper .tall,
+#gallery5-5 .grid-wrapper .tall,
+#gallery6 .grid-wrapper .tall
+{
+    grid-row: span 2;
+}
+/*#gallery1 .grid-wrapper .big,
+#gallery2 .grid-wrapper .big,
+#gallery3 .grid-wrapper .big,
+#gallery4 .grid-wrapper .big,
+#gallery5-5 .grid-wrapper .big,
+#gallery6 .grid-wrapper .big
+{
+    grid-column: span 2;
+    grid-row: span 2;
+ 
+}         ZA RAZMOTRITI 4-tu Veliku kocku u gridu 2x2*/   
+
+.popUpFrame::before
+{
+    content: '';
+    position: absolute;
+    top: -10%;
+    width: 100%;
+    height: 120%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+ .popUpImage > img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    border-radius: 70%;
+    
+}
+.popUpImage .popUpBtnClose{
+    width: object-fit;
+    padding: 0 .5rem;
+    aspect-ratio: 1;
+    background-color: black;
+    border:2px solid white;
+    border-radius: 50%;
+    text-align: center;
+    color:white;
+    position: absolute;
+    right:5%;
+    top: 5%;
+    z-index: 99999;
+    transition: .3;
+    display: grid;
+    place-items: center;
+}
+ .popUpImage .popUpBtnClose:hover,
+ .popUpImage .popUpBtnClose:hover .signSidestoClose{
+    transition: .3;
+    font-size: larger;
+    top: 4.8%;
+    cursor: pointer;
+}
+
+.popUpImage .popUpBtnLeft,
+ .popUpImage .popUpBtnRight
+{
+    width: object-fit;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 3rem;
+    color: black;
+    padding: 0;
+    position: absolute;
+    top: 80%;
+    z-index: 99999;
+    transition: .3;
+    display: grid;
+    place-items: center;
+}
+ .popUpImage .popUpBtnLeft{
+   left: 5%;
+}
+.popUpImage .popUpBtnRight{
+   right: 5%;
+}
+ .popUpImage .popUpBtnLeft:hover
+{    
+    width: object-fit;
+    transition: .4; 
+   
+    top: 80%;
+}
+.popUpImage .popUpBtnRight:hover{
+   
+    width: object-fit;
+    transition: .4;
+   
+    top: 80%;
+}
+.singnXtoClose{
+  color:white;
+  padding-bottom: .2rem;
+}
+
+.signSidestoClose{
+    padding: 0 0.5rem;
+    color:white;  
+    background: black;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+}
+.signSidestoClose:hover{
+    font-size: 3.2rem;
+}
+
+
+    
+
+    
+
